@@ -201,6 +201,8 @@ clientSecret: your-client-secret
 | `backchannelLogoutURL` | string | derived | Back-channel logout endpoint path. |
 | `enableFrontchannelLogout` | bool | `false` | Enable OIDC front-channel logout (browser iframe logout). |
 | `frontchannelLogoutURL` | string | derived | Front-channel logout endpoint path. |
+| `tmbSessionURL` | string | none | Path of the token-mediating-backend endpoint, authenticated by the session cookie. `GET` returns user identifier, groups, roles, expiry, the claims listed in `tmbClaims` and the access token; `POST` forces a token refresh and returns the same. Setting it enables the endpoint. See [TMB.md](TMB.md). |
+| `tmbClaims` | []string | none | ID-token claim names returned in the endpoint's `claims` object. Empty by default: nothing extra is exposed. |
 | `caCertPath` / `caCertPEM` | string | none | Custom CA bundle for OIDC TLS verification (filesystem path, or inline PEM). Mutually exclusive with `insecureSkipVerify`. |
 | `insecureSkipVerify` | bool | `false` | Disable TLS verification for the OIDC client (load balancer / mTLS edge). Emits a loud warning at startup. |
 

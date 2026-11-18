@@ -151,6 +151,7 @@ Full reference in [docs/CONFIGURATION.md](docs/CONFIGURATION.md).
 | `clientAssertionAlg` | `RS256` | JWS alg for `private_key_jwt`. Supported: `RS256/384/512`, `PS256/384/512`, `ES256/384/512`. |
 | `enableBackchannelLogout` / `backchannelLogoutURL` | `false` / none | OIDC Back-Channel Logout (server-to-server). |
 | `enableFrontchannelLogout` / `frontchannelLogoutURL` | `false` / none | OIDC Front-Channel Logout (iframe). |
+| `tmbSessionURL` | none | Path (e.g. `/auth/session`) of an endpoint for SPAs, authenticated by the session cookie: `GET` returns session info and the access token, `POST` forces a refresh. Setting it enables the endpoint; `tmbClaims` lists extra ID-token claims to return. See [docs/TMB.md](docs/TMB.md). |
 | `redis` | disabled | See [docs/REDIS.md](docs/REDIS.md). |
 | `dynamicClientRegistration` | disabled | See [docs/DCR.md](docs/DCR.md). |
 
